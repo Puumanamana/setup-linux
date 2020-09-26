@@ -1,0 +1,24 @@
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - python =3.8
+  - r-base =3.6
+  - numpy
+  - pandas >=1
+  - biopython
+  - matplotlib
+  - seaborn
+  - jedi
+  - epc
+  - scikit-learn
+  - scipy
+  - virtualenv
+  - parallel
+  - seqtk
+  - emboss
+  - samtools>=1.9
+  - bwa
+  - minimap2
+  - fastqc
