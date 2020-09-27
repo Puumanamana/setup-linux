@@ -5,19 +5,10 @@
 `mkdir -p ~/.local/bin ~/.local/src ~/.emacs.d`
 
 ## Setup ssh
-1) setup ssh key
-```bash
-ssh-keygen
-ssh-add
-```
-if ssh-add fails, then
-```bash
-eval $(ssh-agent)
-ssh-add
-```
-
-setup ssh to remove server
-`ssh-copy-id [...]`
+1) setup ssh key: `ssh-keygen`
+2) setup ssh to remove server: `ssh-copy-id [...]`
+3) At the beginning of each new session
+`ssh-add`, or if it fails, do  `eval $(ssh-agent)` before
 
 ## Install oh-my-zsh
 ```bash
