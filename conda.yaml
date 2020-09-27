@@ -5,6 +5,7 @@ channels:
 dependencies:
   - python =3.8
   - r-base =3.6
+  - ipython
   - numpy
   - pandas >=1
   - biopython
