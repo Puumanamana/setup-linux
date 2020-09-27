@@ -5,24 +5,28 @@
 `mkdir -p ~/.local/bin ~/.local/src ~/.emacs.d`
 
 ## Setup ssh
-```
-# 1) setup ssh key
+1) setup ssh key
+```bash
 ssh-keygen
 ssh-add
+```
+if ssh-add fails, then
+```bash
 eval $(ssh-agent)
+ssh-add
 ```
 
 setup ssh to remove server
 `ssh-copy-id [...]`
 
 ## Install oh-my-zsh
-```
+```bash
 sudo apt-get update && sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Install zplug
-```
+```bash
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 source ~/.zplug/init.zsh
 ```
@@ -31,7 +35,7 @@ source ~/.zplug/init.zsh
 `cp configs/.zshrc .`
 
 ## Install enhancd and autosuggestions
-```
+```bash
 sudo apt-get install fzy
 
 zplug "b4b4r07/enhancd", use:init.sh
@@ -56,7 +60,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
 ```
 
 Install packages using provided yaml file
-```
+```bash
 source ~/.zshrc
 conda env update -n base --file configs/conda.yaml
 ```
@@ -68,8 +72,8 @@ git clone https://github.com/Emiller88/nextflow-mode.git configs/nextflow-mode
 find configs -name "*.el" -exec cp {} ~/.emacs.d \;
 ```
 
-Install MELP packages using the emacs-pkg-install.sh script
-```
+Install MELPA packages using the emacs-pkg-install.sh script
+```bash
 for package in "groovy-mode jedi flycheck-pyflakes yaml-mode";
 do
     ./emacs-pkg-install.sh $package
@@ -98,7 +102,7 @@ chmod +x vl vll && mv vl vll ~/.local/bin
 ```
 
 ## Docker (from https://docs.docker.com/engine/install/ubuntu/)
-```
+```bash
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -116,7 +120,7 @@ sudo docker run hello-world
 ```
 
 ## Singularity (from https://github.com/hpcng/singularity/blob/master/INSTALL.md)
-```
+```bash
 sudo apt-get update \
     && sudo apt-get install -y \
             build-essential \
