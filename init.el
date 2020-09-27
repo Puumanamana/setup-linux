@@ -22,7 +22,6 @@
 ;; <TAB> settings
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-(setq indent-line-function 'insert-tab)
 
 (defun my-python-indent-line ()
   (if (eq (car (python-indent-context)) :inside-docstring)
