@@ -37,6 +37,7 @@ zplug load
 
 ## http-server
 For latest version, check [here](https://nodejs.org/en/)
+
 `wget -qO- c/dist/v12.18.4/node-v12.18.4-linux-x64.tar.xz | tar xz`
 
 Move content and add binaries to PATH. Then, just use npm:
