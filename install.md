@@ -1,5 +1,5 @@
 # Customization of linux machine
-# Author: Cedric Arisdakessian
+Author: Cedric Arisdakessian
 
 ## Create some folders
 `mkdir -p ~/.local/bin ~/.local/src ~/.emacs.d`
@@ -36,7 +36,8 @@ zplug load
 ```
 
 ## http-server
-`wget -qO- https://nodejs.org/dist/v12.18.4/node-v12.18.4-linux-x64.tar.xz | tar xz`
+For latest version, check [here](https://nodejs.org/en/)
+`wget -qO- c/dist/v12.18.4/node-v12.18.4-linux-x64.tar.xz | tar xz`
 
 Move content and add binaries to PATH. Then, just use npm:
 `npm install -g http-server`
@@ -44,6 +45,7 @@ Move content and add binaries to PATH. Then, just use npm:
 Make sure http-server binary is in the PATH as well
 
 ## Install miniconda
+For latest version, check [here](https://docs.conda.io/en/latest/miniconda.html)
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && bash Miniconda3-latest-Linux-x86_64.sh \
@@ -72,6 +74,7 @@ done
 ```
 
 ## Install byobu
+https://www.byobu.org/
 ```bash
 sudo apt-get install byobu
 mkdir -p ~/.byobu && cp configs/keybindings.tmux ~/.byobu/
@@ -92,7 +95,8 @@ wget https://github.com/w9/vll-haskell/releases/download/v0.0.1-hotfix2/vll
 chmod +x vl vll && mv vl vll ~/.local/bin
 ```
 
-## Docker (from https://docs.docker.com/engine/install/ubuntu/)
+## Docker 
+Instructions: https://docs.docker.com/engine/install/ubuntu
 ```bash
 sudo apt-get install \
     apt-transport-https \
@@ -110,7 +114,9 @@ sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.i
 sudo docker run hello-world
 ```
 
-## Singularity (from https://github.com/hpcng/singularity/blob/master/INSTALL.md)
+## Singularity 
+Instructions: https://github.com/hpcng/singularity/blob/master/INSTALL.md
+
 ```bash
 sudo apt-get update \
     && sudo apt-get install -y \
