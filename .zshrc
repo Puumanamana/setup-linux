@@ -6,8 +6,6 @@ export PYTHONDONTWRITEBYTECODE="1"
 export EDITOR='emacs'
 export NXF_SINGULARITY_CACHEDIR="$HOME/.singularity_images.cache"
 
-eval $(ssh-agent) > /dev/null
-
 # ZSH setup
 export ZSH=$HOME/.oh-my-zsh
 export TERM=xterm-256color
