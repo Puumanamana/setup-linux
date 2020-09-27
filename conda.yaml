@@ -14,11 +14,7 @@ dependencies:
   - epc
   - scikit-learn
   - scipy
+  - pytest
   - virtualenv
   - parallel
-  - seqtk
   - emboss
-  - samtools>=1.9
-  - bwa
-  - minimap2
-  - fastqc
