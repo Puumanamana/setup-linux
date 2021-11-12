@@ -3,8 +3,8 @@ channels:
   - defaults
   - bioconda
 dependencies:
-  - python =3.8
-  - r-base =3.6
+  - python >=3.8
+  - r-base >=4
   - ipython
   - numpy
   - pandas >=1
@@ -16,6 +16,4 @@ dependencies:
   - scikit-learn
   - scipy
   - pytest
-  - virtualenv
   - parallel
-  - emboss
