@@ -4,15 +4,12 @@ channels:
   - bioconda
 dependencies:
   - python >=3.8
-  - r-base >=4
   - ipython
   - numpy
   - pandas >=1
   - biopython
   - matplotlib
   - seaborn
-  - jedi
-  - epc
   - scikit-learn
   - scipy
   - pytest

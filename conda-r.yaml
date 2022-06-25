@@ -1,0 +1,17 @@
+name: Renv
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - r-base >=4
+  - bioconductor-phyloseq
+  - bioconductor-deseq2
+  - r-dplyr
+  - r-tidyr
+  - r-remotes
+  - r-vegan
+  - r-stringr
+  - r-data.table
+  - r-ggplot2
+  - r-cowplot

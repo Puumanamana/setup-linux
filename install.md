@@ -52,11 +52,16 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && bash Miniconda3-latest-Linux-x86_64.sh \
     && rm -f Miniconda3-latest-Linux-x86_64.sh
 ```
+And install mamba
+```
+conda install -c conda-forge -y mamba
+```
 
 Install packages using provided yaml file
 ```bash
 source ~/.zshrc
-conda env update -n base --file configs/conda.yaml
+mamba env create -f conda-r.yaml
+mamba env create -f conda-python.yaml
 ```
 
 ## Install emacs
@@ -72,13 +77,6 @@ for package in "groovy-mode jedi flycheck-pyflakes yaml-mode";
 do
     ./emacs-pkg-install.sh $package
 done
-```
-
-## Install byobu
-https://www.byobu.org/
-```bash
-sudo apt-get install byobu
-mkdir -p ~/.byobu && cp configs/keybindings.tmux ~/.byobu/
 ```
 
 ## Nextflow
