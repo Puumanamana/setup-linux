@@ -35,23 +35,10 @@ alias gitlog="git log --graph --decorate"
 alias rm='rm -i'
 alias mv='mv -i'
 
-function conda_on() {
-    __conda_setup="$('~/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "~/.miniconda3/etc/profile.d/conda.sh" ]; then
-            . "~/.miniconda3/etc/profile.d/conda.sh"
-        else
-            export PATH="~/.miniconda3/bin:$PATH"
-        fi
-    fi
-}
-
-function mamba_on() {
-    if [ -f "~/.miniconda3/etc/profile.d/mamba.sh" ]; then
-        . "~/.miniconda3/etc/profile.d/mamba.sh"
-    fi
+function conda-on() {
+    INIT_PATH=$HOME/.miniconda3/etc/profile.d/
+    . $INIT_PATH/conda.sh
+    . $INIT_PATH/mamba.sh
 }
 
 function serve() {
