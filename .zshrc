@@ -36,9 +36,9 @@ alias rm='rm -i'
 alias mv='mv -i'
 
 function conda-on() {
-    INIT_PATH=$HOME/.miniconda3/etc/profile.d/
+    INIT_PATH=$HOME/.miniconda3/etc/profile.d
     . $INIT_PATH/conda.sh
-    . $INIT_PATH/mamba.sh
+    [ -f $INIT_PATH/mamba.sh ] && . $INIT_PATH/mamba.sh || :
 }
 
 function serve() {
