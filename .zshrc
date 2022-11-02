@@ -39,6 +39,8 @@ function conda-on() {
     INIT_PATH=$HOME/.miniconda3/etc/profile.d
     . $INIT_PATH/conda.sh
     [ -f $INIT_PATH/mamba.sh ] && . $INIT_PATH/mamba.sh || :
+    [ -z "$1" ] && env=base || env=$1
+    conda activate $env
 }
 
 function serve() {
