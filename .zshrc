@@ -52,3 +52,14 @@ function serve() {
 function dims() {
     awk -v sep="$2" 'BEGIN{FS=sep}END{print NR" rows, " NF" columns"}' $1
 }
+
+function vll {
+    [ -z "$1" ] && echo "Error: File required" && return 1 || file=$1
+    ext=${file##*.}
+
+    [ "$ext" = "csv" ] && sep=, || sep=$'\t'
+    if [ ! -z "$2" ]; then
+        sep="$2"
+    fi
+    column -t -s $sep $file | less -S
+}
