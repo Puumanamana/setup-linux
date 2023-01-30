@@ -5,7 +5,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
 # Install zsh if not there and a few other packages (emacs, docker)
-sudo apt-get update -y && apt-get install -y zsh fzy emacs docker
+sudo apt-get update -y && sudo apt-get install -y zsh fzy emacs docker
 
 # Download oh-my-zsh
 echo y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
