@@ -12,22 +12,13 @@
  '(custom-enabled-themes (quote (wombat)))
  '(package-selected-packages
    (quote
-    (fill-column-indicator markdown-mode rustic racer flymake-rust yaml-mode md-readme dockerfile-mode ess groovy-mode flymd helm-ag helm flycheck-pyflakes python-docstring py-import-check jedi flymake-python-pyflakes flycheck-pycheckers elpy company-jedi))))
+    (fill-column-indicator markdown-mode yaml-mode md-readme dockerfile-mode ess groovy-mode flymd helm-ag helm python-docstring py-import-check jedi))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(require 'flymake-rust)
-(add-hook 'rust-mode-hook 'flymake-rust-load)
-
-(require 'flycheck-pyflakes)
-(add-hook 'python-mode-hook 'flycheck-mode)
-
-(with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-jedi))
 
 (add-hook 'python-mode-hook 'jedi:setup)
 
