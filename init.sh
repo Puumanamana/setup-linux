@@ -26,7 +26,11 @@ zplug install
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #        Setup mamba
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
-conda install -y mamba
+
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh" &&
+    echo '\nyes\n\nyes\n' | bash Mamba*.sh &&
+    rm -f Mamba*.sh
+
 # Python env
 mamba create -n py3 -c conda-forge -c bioconda -y pandas-gbq seaborn scipy scikit-learn scikit-survival xgboost
 # R env
