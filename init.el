@@ -56,7 +56,7 @@
 (global-set-key (kbd "M-p") 'xah-backward-block)
 (global-set-key (kbd "M-n") 'xah-forward-block)
 
-(load "~/.emacs.d/nextflow.el")
+(load "~/.emacs.d/nextflow-mode.el")
 (add-to-list 'auto-mode-alist '("\\.config\\'" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.conf\\'" . groovy-mode))
 
