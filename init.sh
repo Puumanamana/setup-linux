@@ -24,6 +24,14 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug install
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
+#        Setup emacs
+# ~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+wget https://raw.githubusercontent.com/Emiller88/nextflow-mode/master/nextflow-mode.el -O .emacs.d/nextflow-mode.el
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #        Setup mamba
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
