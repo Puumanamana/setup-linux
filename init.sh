@@ -5,11 +5,14 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
 # Install zsh if not there and a few other packages (emacs, docker)
-sudo apt-get update -y && apt-get install -y zsh fzy emacs docker && zsh
+sudo apt-get update -y && apt-get install -y zsh fzy emacs docker
 
 # Download oh-my-zsh
 echo y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+# Download my .zshrc
+wget https://raw.githubusercontent.com/Puumanamana/setup-linux/master/.zshrc -O .zshrc && source ~/.zshrc
 
 # zplug for plugins
 source ~/.zplug/init.zsh
@@ -19,9 +22,6 @@ zplug "b4b4r07/enhancd", use:init.sh
 # Gray autosuggestion
 zplug "zsh-users/zsh-autosuggestions"
 zplug install
-
-# Download my .zshrc
-wget https://raw.githubusercontent.com/Puumanamana/setup-linux/master/.zshrc && source ~/.zshrc
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #        Setup mamba
