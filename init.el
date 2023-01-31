@@ -22,8 +22,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-(add-hook 'python-mode-hook 'jedi:setup)
-
 ; keep a list of recently opened files
 (recentf-mode 1)
 (setq-default recent-save-file "~/.emacs.d/recentf")
