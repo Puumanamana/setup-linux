@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/Puumanamana/setup-linux/master/.zshrc -O 
 
 wget https://raw.githubusercontent.com/Emiller88/nextflow-mode/master/nextflow-mode.el -O .emacs.d/nextflow-mode.el
 
-# + install groovy-mode, yaml-mode, markdown-mode
+# + install groovy-mode, yaml-mode, markdown-mode, ess
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #        Setup mamba
