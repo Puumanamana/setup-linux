@@ -84,6 +84,7 @@ main__':\C-m    args = parse_args()\C-[[201~\C-m\C-m\C-?")
 (fset 'nfinit
    "\C-[[200~nextflow.enable.dsl = 2\C-m\C-minclude {} from './' addParams()\C-m\C-mprocess P {\C-m    tag \"$meta.id\"\C-m\C-m    input:\C-m\C-m    output:\C-m\C-m    script:\C-m    \"\"\"\C-m    \"\"\"\C-m}\C-m\C-mworkflow {\C-m\C-m}\C-[[201~\C-m")
 
+(setq ess-indent-with-fancy-comments nil)
 
 ;; (setq fci-rule-column 90)
 ;; (setq fci-rule-color "yellow")
