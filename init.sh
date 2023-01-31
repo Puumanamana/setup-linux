@@ -42,9 +42,9 @@ curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Ma
 # Python env
 mamba create -n py3 -c conda-forge -c bioconda -y pandas-gbq seaborn scipy scikit-learn scikit-survival xgboost
 # R env
-mambda create -n r -c conda-forge -c bioconda -y \
+mamba create -n r -c conda-forge -c bioconda -y \
        r-remotes r-biocmanager r-tidyverse r-circlize r-survminer r-bigrquery r-ggpubr \
        bioconductor-deseq2 bioconductor-edger bioconductor-complexheatmap
 # General bioinfo env
-mambda create -n bioinfo -c conda-forge -c bioconda -y \
+mamba create -n bioinfo -c conda-forge -c bioconda -y \
        seqtk samtools sra-tools fastp emboss parallel star bwa
