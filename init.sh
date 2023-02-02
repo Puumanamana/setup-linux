@@ -64,7 +64,7 @@ mamba create -n bioinfo -c conda-forge -c bioconda -y \
 mamba install google-cloud-sdk
 
 # configure docker
-gcloud
+gcloud auth configure-docker REGISTRY
 
 # Mount a bucket
 ## Install instructions: https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md
