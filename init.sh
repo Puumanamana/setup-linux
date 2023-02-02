@@ -31,7 +31,9 @@ mkdir -p ~/.emacs.d
 wget https://raw.githubusercontent.com/Puumanamana/setup-linux/master/init.el -O .emacs.d/init.el
 wget https://raw.githubusercontent.com/Emiller88/nextflow-mode/master/nextflow-mode.el -O .emacs.d/nextflow-mode.el
 
-# + install groovy-mode, yaml-mode, markdown-mode, ess, helm, dockerfile-mode
+for pkg in groovy-mode yaml-mode markdown-mode ess helm dockerfile-mode; do
+    curl https://raw.githubusercontent.com/Puumanamana/setup-linux/master/emacs-pkg-install.sh | bash -s $pkg
+done
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #        Setup mamba
