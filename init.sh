@@ -54,3 +54,20 @@ mamba create -n r -c conda-forge -c bioconda -y \
 # General bioinfo env
 mamba create -n bioinfo -c conda-forge -c bioconda -y \
        seqtk samtools sra-tools fastp emboss parallel star bwa
+       
+       
+# ~~~~~~~~~~~~~~~~~~~~~~~~~ #
+#        GCP only
+# ~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+# Install google cloud sdk
+mamba install google-cloud-sdk
+
+# configure docker
+gcloud
+
+# Mount a bucket
+## Install instructions: https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md
+mkdir FOLDER && gcsfuse --implicit-dirs BUCKET FOLDER 
+# Unmount
+fusermount -u PATH/TO/FOLDER
