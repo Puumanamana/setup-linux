@@ -12,7 +12,8 @@ echo y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/m
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 # zplug for plugins
-chsh -s /bin/zsh USERNAME
+sudo passwd $USER
+chsh -s /bin/zsh $USER
 zsh
 source ~/.zplug/init.zsh
 
