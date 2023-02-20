@@ -96,7 +96,7 @@ main__':\C-m    args = parse_args()\C-[[201~\C-m\C-m\C-?")
 
 (with-eval-after-load 'copilot
   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab))
-   (define-key copilot-mode-map (kbd "TAB") #'my/copilot-tab))
+   (define-key copilot-mode-map (kbd "TAB") #'my/copilot-tab)
 
 ;; (setq fci-rule-column 90)
 ;; (setq fci-rule-color "yellow")
