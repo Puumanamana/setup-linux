@@ -38,6 +38,12 @@ for pkg in groovy-mode yaml-mode markdown-mode ess helm dockerfile-mode; do
     curl https://raw.githubusercontent.com/Puumanamana/setup-linux/master/emacs-pkg-install.sh | bash -s $pkg
 done
 
+# Setup github-copilot (Important: emacs >27)
+
+# 1) Make sure editorconfig are installed (dash and s should already be installed)
+# 2)
+git clone https://github.com/zerolfx/copilot.el.git ~/.emacs.d/copilot.el
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #        Setup mamba
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -55,7 +61,6 @@ mamba create -n r -c conda-forge -c bioconda -y \
 # General bioinfo env
 mamba create -n bioinfo -c conda-forge -c bioconda -y \
        seqtk samtools sra-tools fastp emboss parallel star bwa
-       
        
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #        GCP only
