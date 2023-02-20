@@ -41,8 +41,9 @@ done
 # Setup github-copilot (Important: emacs >27)
 
 # 1) Make sure editorconfig are installed (dash and s should already be installed)
-# 2)
+# 2) Make sure nodejs >= 16 is installed
 git clone https://github.com/zerolfx/copilot.el.git ~/.emacs.d/copilot.el
+# 3) login: M-x copilot-login
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #        Setup mamba
