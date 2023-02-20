@@ -86,6 +86,18 @@ main__':\C-m    args = parse_args()\C-[[201~\C-m\C-m\C-?")
 
 (setq ess-indent-with-fancy-comments nil)
 
+;; Setting up copilot
+(add-to-list 'load-path "~/.emacs.d/copilot.el")
+(require 'copilot)
+(defun my/copilot-tab ()
+  (interactive)
+  (or (copilot-accept-completion)
+      (indent-for-tab-command)))
+
+(with-eval-after-load 'copilot
+  (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab))
+   (define-key copilot-mode-map (kbd "TAB") #'my/copilot-tab))
+
 ;; (setq fci-rule-column 90)
 ;; (setq fci-rule-color "yellow")
 ;; (require 'fill-column-indicator)
