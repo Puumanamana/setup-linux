@@ -55,3 +55,13 @@ function vll {
     fi
     column -t -s $sep $file | less -S
 }
+
+function nflog {
+    [ -z "$1" ] && echo "Error: Missing run name" && nextflow log | tail && return 1 || run=$1
+
+    if [ "$run" = "latest" ]; then
+        run=$(grep "Run name: " .nextflow.log | rev | cut -d' ' -f1 | rev)
+    fi
+    echo "Logs for nextflow run: $run"
+    nextflow log -f name,exit,realtime,pcpu,peak_vmem,syscr,syscw,workdir $run
+}
