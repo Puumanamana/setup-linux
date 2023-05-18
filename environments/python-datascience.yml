@@ -1,3 +1,4 @@
+name: py3
 channels:
   - conda-forge
   - defaults

@@ -1,0 +1,15 @@
+name: bioinfo
+channels:
+    - conda-forge
+    - bioconda
+dependencies:
+    - star >=2.7
+    - bwa >=0.7
+    - samtools >=1.17
+    - sra-tools >=3
+    - fastp
+    - fastqc
+    - multiqc
+    - entrez-direct
+    - seqtk
+    - emboss
