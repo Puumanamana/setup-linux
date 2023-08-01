@@ -64,6 +64,11 @@
 (setq-default indent-tabs-mode nil)
 (setq indent-line-function 'insert-tab)
 
+(add-hook 'before-save-hook 'my-prog-nuke-trailing-whitespace)
+(defun my-prog-nuke-trailing-whitespace ()
+  (when (derived-mode-p 'prog-mode)
+    (delete-trailing-whitespace)))
+
 (defun my-python-indent-line ()
   (if (eq (car (python-indent-context)) :inside-docstring)
       'noindent
