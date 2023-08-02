@@ -6,9 +6,6 @@
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (wombat)))
@@ -17,12 +14,9 @@
     (fill-column-indicator markdown-mode yaml-mode md-readme dockerfile-mode ess groovy-mode flymd helm-ag helm python-docstring py-import-check jedi))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  )
 
-; keep a list of recently opened files
+;; keep a list of recently opened files
 (recentf-mode 1)
 (setq-default recent-save-file "~/.emacs.d/recentf")
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
@@ -37,6 +31,7 @@
       kept-old-versions 2
       version-control t)
 
+;; Map M-p and M-n to block cursor movement
 (defun xah-forward-block (&optional n)
   (interactive "p")
   (let ((n (if (null n) 1 n)))
@@ -56,10 +51,7 @@
 (global-set-key (kbd "M-p") 'xah-backward-block)
 (global-set-key (kbd "M-n") 'xah-forward-block)
 
-(load "~/.emacs.d/nextflow-mode.el")
-(add-to-list 'auto-mode-alist '("\\.config\\'" . groovy-mode))
-(add-to-list 'auto-mode-alist '("\\.conf\\'" . groovy-mode))
-
+;; TAB-related stuff
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 (setq indent-line-function 'insert-tab)
@@ -78,6 +70,15 @@
   (setq indent-line-function #'my-python-indent-line))
 (add-hook 'python-mode-hook #'my-python-mode-hook)
 
+;; Nextflow mode
+(load "~/.emacs.d/nextflow-mode.el")
+(add-to-list 'auto-mode-alist '("\\.config\\'" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\\.conf\\'" . groovy-mode))
+
+;; R prevent auto-indent of single '#' comments 
+(setq ess-indent-with-fancy-comments nil)
+
+;; Custom pre-fill
 (fset 'ipdb
       (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("import ipdb;ipdb.set_trace()" 0 "%d")) arg)))
 (fset 'shebang
@@ -89,20 +90,14 @@ main__':\C-m    args = parse_args()\C-[[201~\C-m\C-m\C-?")
 (fset 'nfinit
    "\C-[[200~nextflow.enable.dsl = 2\C-m\C-minclude {} from './' addParams()\C-m\C-mprocess P {\C-m    tag \"$meta.id\"\C-m\C-m    input:\C-m\C-m    output:\C-m\C-m    script:\C-m    \"\"\"\C-m    \"\"\"\C-m}\C-m\C-mworkflow {\C-m\C-m}\C-[[201~\C-m")
 
-(setq ess-indent-with-fancy-comments nil)
-
-;; Setting up copilot
-(add-to-list 'load-path "~/.emacs.d/copilot.el")
+;; Copilot configuration
 (require 'copilot)
-(defun my/copilot-tab ()
-  (interactive)
-  (or (copilot-accept-completion)
-      (indent-for-tab-command)))
+(add-hook 'prog-mode-hook 'copilot-mode)
+(add-to-list 'copilot-major-mode-alist '(python r dockerfile sql groovy))
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
-(with-eval-after-load 'copilot
-  (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab))
-   (define-key copilot-mode-map (kbd "TAB") #'my/copilot-tab)
-
+;; 90 character line display 
 ;; (setq fci-rule-column 90)
 ;; (setq fci-rule-color "yellow")
 ;; (require 'fill-column-indicator)
