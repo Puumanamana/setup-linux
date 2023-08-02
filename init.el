@@ -91,6 +91,7 @@ main__':\C-m    args = parse_args()\C-[[201~\C-m\C-m\C-?")
    "\C-[[200~nextflow.enable.dsl = 2\C-m\C-minclude {} from './' addParams()\C-m\C-mprocess P {\C-m    tag \"$meta.id\"\C-m\C-m    input:\C-m\C-m    output:\C-m\C-m    script:\C-m    \"\"\"\C-m    \"\"\"\C-m}\C-m\C-mworkflow {\C-m\C-m}\C-[[201~\C-m")
 
 ;; Copilot configuration
+(add-to-list 'load-path "~/.emacs.d/copilot.el")
 (require 'copilot)
 (add-hook 'prog-mode-hook 'copilot-mode)
 (add-to-list 'copilot-major-mode-alist '(python r dockerfile sql groovy))
