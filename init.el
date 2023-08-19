@@ -95,8 +95,8 @@ main__':\C-m    args = parse_args()\C-[[201~\C-m\C-m\C-?")
 (require 'copilot)
 (add-hook 'prog-mode-hook 'copilot-mode)
 (add-to-list 'copilot-major-mode-alist '(python r dockerfile sql groovy))
-(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "M-<tab>") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "M-TAB") 'copilot-accept-completion)
 
 ;; 90 character line display 
 ;; (setq fci-rule-column 90)
