@@ -70,11 +70,6 @@
   (setq indent-line-function #'my-python-indent-line))
 (add-hook 'python-mode-hook #'my-python-mode-hook)
 
-;; Nextflow mode
-(load "~/.emacs.d/nextflow-mode.el")
-(add-to-list 'auto-mode-alist '("\\.config\\'" . groovy-mode))
-(add-to-list 'auto-mode-alist '("\\.conf\\'" . groovy-mode))
-
 ;; R prevent auto-indent of single '#' comments 
 (setq ess-indent-with-fancy-comments nil)
 
@@ -89,6 +84,13 @@
 main__':\C-m    args = parse_args()\C-[[201~\C-m\C-m\C-?")
 (fset 'nfinit
    "\C-[[200~nextflow.enable.dsl = 2\C-m\C-minclude {} from './' addParams()\C-m\C-mprocess P {\C-m    tag \"$meta.id\"\C-m\C-m    input:\C-m\C-m    output:\C-m\C-m    script:\C-m    \"\"\"\C-m    \"\"\"\C-m}\C-m\C-mworkflow {\C-m\C-m}\C-[[201~\C-m")
+
+
+;; Nextflow mode configuration
+(add-to-list 'load-path "~/.emacs.d/nextflow-mode.el")
+(require 'nextflow-mode)
+(add-to-list 'auto-mode-alist '("\\.config\\'" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\\.conf\\'" . groovy-mode))
 
 ;; Copilot configuration
 (add-to-list 'load-path "~/.emacs.d/copilot.el")
