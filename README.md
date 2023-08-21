@@ -52,7 +52,7 @@ mkdir -p ~/.emacs.d && wget -O ~/.emacs.d/init.el https://raw.githubusercontent.
 
 #### Nextflow mode
 
-`git clone https://github.com/Emiller88/nextflow-mode.git nextflow-mode`
+`git clone https://github.com/Emiller88/nextflow-mode.git nextflow-mode.el`
 Dependency: groovy-mode
 
 #### Copilot mode
