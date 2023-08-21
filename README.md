@@ -10,21 +10,21 @@ Author: Cedric Arisdakessian
 ## Zsh setup
 
 ```bash
-sudo apt-get install zsh fzy
-
-# Copy configuration
-wget  -O ~/.zshrc https://raw.githubusercontent.com/Puumanamana/setup-linux/master/.zshrc
+sudo apt-get update && sudo apt-get install zsh fzy git
 ```
 
 ### Install oh-my-zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Copy configuration
+wget  -O ~/.zshrc https://raw.githubusercontent.com/Puumanamana/setup-linux/master/.zshrc
 ```
 
 ### zplug
 ```bash
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-source ~/.zplug/init.zsh
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh \
+&& source ~/.zplug/init.zsh
 ```
 
 ### Install enhancd and autosuggestions
@@ -37,26 +37,35 @@ zplug install
 
 ## Emacs setup
 
+### Install
+
 - Check emacs >27, and if not, uninstall and reinstall
 
 ```bash
+# If emacs is old
 sudo apt-get uninstall emacs-bin-common
 # Figure out a way to install >27 if not available on current system (e.g., flatpak, conda, snap,...)
+
+# Copy configuration
+mkdir -p ~/.emacs.d && wget -O ~/.emacs.d/init.el https://raw.githubusercontent.com/Puumanamana/setup-linux/master/init.el
 ```
 
-- Copy config
-```bash
-mkdir -p ~/.emacs.d
-wget -O ~/.emacs.d/init.el https://raw.githubusercontent.com/Puumanamana/setup-linux/master/init.el
-```
+#### Nextflow mode
 
+`git clone https://github.com/Emiller88/nextflow-mode.git nextflow-mode`
+Dependency: groovy-mode
 
-- Clone https://github.com/Emiller88/nextflow-mode.git
-    - Dependency: groovy-mode
-- Clone https://github.com/zerolfx/copilot.el
-    - Dependency: editorconfig
-    - Probably need to run copilot-login the first time
-- Nice to have: {yaml,markdown,dockerfile}-mode
+#### Copilot mode
+
+`git clone https://github.com/zerolfx/copilot.el`
+
+Dependency: editorconfig
+
+Need to run copilot-login the first time
+
+#### Nice to have
+
+{yaml,markdown,dockerfile}-mode
 
 ## Install mambaforge
 For latest version, check [here](https://github.com/conda-forge/miniforge#mambaforge)
