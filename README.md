@@ -31,15 +31,11 @@ zplug install
 ```
 
 ## Install miniconda
-For latest version, check [here](https://docs.conda.io/en/latest/miniconda.html)
+For latest version, check [here](https://github.com/conda-forge/miniforge)
 ```bash
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && bash Miniconda3-latest-Linux-x86_64.sh \
-    && rm -f Miniconda3-latest-Linux-x86_64.sh
-```
-And install mamba
-```
-conda install -c conda-forge -y mamba
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh \
+    && bash Mambaforge-Linux-x86_64.sh \
+    && rm -f Mambaforge-Linux-x86_64.sh
 ```
 
 Install packages using provided yaml file
