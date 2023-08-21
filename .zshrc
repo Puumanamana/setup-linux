@@ -2,6 +2,7 @@ export EDITOR=emacs
 export PYTHONDONTWRITEBYTECODE="1" # don't write .pyc
 export TERM=xterm-256color
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$PATH:$HOME/.local/bin"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="bira"
