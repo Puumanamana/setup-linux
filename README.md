@@ -74,3 +74,17 @@ wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforg
     && bash Mambaforge-Linux-x86_64.sh
 rm -f Mambaforge-Linux-x86_64.sh
 ```
+
+## Setup nextflow
+
+### Install java
+```bash
+sudo apt-get install openjdk-17-jdk
+```
+
+### Install nextflow
+```bash
+wget -qO- https://get.nextflow.io | bash
+mkdir -p ~/.local/bin && mv nextflow ~/.local/bin/
+```
+
