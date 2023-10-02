@@ -66,3 +66,5 @@ function nflog {
     echo "Logs for nextflow run: $run"
     nextflow log -f name,exit,realtime,pcpu,peak_vmem,syscr,syscw,workdir $run
 }
+
+echo "\033[4;35m$(tmux ls)\033[0m"
